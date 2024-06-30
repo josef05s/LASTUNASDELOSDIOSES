@@ -1,0 +1,22 @@
+server:
+  port: ${PORT:8555}
+message: Configuracion de Gestión de usuarios en el servidor levantado!
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bddetunas?serverTimezone=UTC
+    username: root
+    password: 12345678
+  jpa:
+    hibernate:
+      ddl-auto: update
+      database-platform: org.hibernate.dialect.MySQLDialect
+  cloud:
+    config:
+      uri: http://localhost:8000
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
